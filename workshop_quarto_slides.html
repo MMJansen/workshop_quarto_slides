@@ -1,0 +1,3196 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="workshop_quarto_slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="workshop_quarto_slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="workshop_quarto_slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="workshop_quarto_slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="workshop_quarto_slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="workshop_quarto_slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="workshop_quarto_slides_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="workshop_quarto_slides_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="workshop_quarto_slides_files/libs/quarto-contrib/quarto-timer-1.0.0/timer.js"></script>
+<link href="workshop_quarto_slides_files/libs/quarto-contrib/quarto-timer-1.0.0/timer.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.549">
+
+  <meta name="author" content="Martine Jansen">
+  <title>Creating slides with Quarto</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="workshop_quarto_slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="workshop_quarto_slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="workshop_quarto_slides_files/libs/revealjs/dist/theme/quarto.css">
+  <link href="workshop_quarto_slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="workshop_quarto_slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="workshop_quarto_slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="workshop_quarto_slides_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="workshop_quarto_slides_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="workshop_quarto_slides_files/libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="workshop_quarto_slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <script src="workshop_quarto_slides_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+  <script src="workshop_quarto_slides_files/libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <link href="workshop_quarto_slides_files/libs/leaflet-1.3.1/leaflet.css" rel="stylesheet">
+  <script src="workshop_quarto_slides_files/libs/leaflet-1.3.1/leaflet.js"></script>
+  <link href="workshop_quarto_slides_files/libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet">
+  <script src="workshop_quarto_slides_files/libs/proj4-2.6.2/proj4.min.js"></script>
+  <script src="workshop_quarto_slides_files/libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+  <link href="workshop_quarto_slides_files/libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet">
+  <script src="workshop_quarto_slides_files/libs/leaflet-binding-2.2.1/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/editor/editor.main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+  <style type="text/css">
+  .monaco-editor pre {
+    background-color: unset !important;
+  }
+
+  .qwebr-editor-toolbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+  }
+
+  .qwebr-editor-toolbar-left-buttons, .qwebr-editor-toolbar-right-buttons {
+    display: flex;
+  }
+
+  .qwebr-non-interactive-loading-container.qwebr-cell-needs-evaluation, .qwebr-non-interactive-loading-container.qwebr-cell-evaluated {
+    justify-content: center;
+    display: flex;
+    background-color: rgba(250, 250, 250, 0.65);
+    border: 1px solid rgba(233, 236, 239, 0.65);
+    border-radius: 0.5rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .qwebr-r-project-logo {
+    color: #2767B0; /* R Project's blue color */
+  }
+
+  .qwebr-icon-status-spinner {
+    color: #7894c4;
+  }
+
+  .qwebr-icon-run-code {
+    color: #0d9c29
+  }
+
+  .qwebr-output-code-stdout {
+    color: #111;
+  }
+
+  .qwebr-output-code-stderr {
+    color: #db4133;
+  }
+
+  .qwebr-editor {
+    border: 1px solid #EEEEEE;
+  }
+
+  .qwebr-editor-toolbar {
+    background-color: #EEEEEE;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .qwebr-button {
+    background-color: #EEEEEE;
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1;
+    text-decoration: none;
+    text-align: center;
+    color: #000;
+    border-color: #dee2e6;
+    border: 1px solid rgba(0,0,0,0);
+    padding: 0.375rem 0.75rem;
+    font-size: .9rem;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  }
+
+  .qwebr-button:hover {
+    color: #000;
+    background-color: #d9dce0;
+    border-color: #c8ccd0;
+  }
+
+  .qwebr-button:disabled,.qwebr-button.disabled,fieldset:disabled .qwebr-button {
+    pointer-events: none;
+    opacity: .65
+  }
+
+  .qwebr-button-reset {
+    color: #696969; /*#4682b4;*/
+  }
+
+  .qwebr-button-copy {
+    color: #696969;
+  }
+
+
+  /* Custom styling for RevealJS Presentations*/
+
+  /* Reset the style of the interactive area */
+  .reveal div.qwebr-interactive-area {
+    display: block;
+    box-shadow: none;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+  } 
+
+  /* Provide space to entries */
+  .reveal div.qwebr-output-code-area pre div {
+    margin: 1px 2px 1px 10px;
+  }
+
+  /* Collapse the inside code tags to avoid extra space between line outputs */
+  .reveal pre div code.qwebr-output-code-stdout, .reveal pre div code.qwebr-output-code-stderr {
+    padding: 0;
+    display: contents;
+  }
+
+  .reveal pre div code.qwebr-output-code-stdout {
+    color: #111;
+  }
+
+  .reveal pre div code.qwebr-output-code-stderr {
+    color: #db4133;
+  }
+
+
+  /* Create a border around console and output (does not effect graphs) */
+  .reveal div.qwebr-console-area {
+    border: 1px solid #EEEEEE;
+    box-shadow: 2px 2px 10px #EEEEEE;
+  }
+
+  /* Cap output height and allow text to scroll */
+  /* TODO: Is there a better way to fit contents/max it parallel to the monaco editor size? */
+  .reveal div.qwebr-output-code-area pre {
+    max-height: 400px;
+    overflow: scroll;
+  }
+
+  </style>
+  <script type="module">
+  // Document level settings ----
+
+  // Determine if we need to install R packages
+  globalThis.qwebrInstallRPackagesList = ['ggplot2'];
+
+  // Specify possible locations to search for the repository
+  globalThis.qwebrPackageRepoURLS = ['https://repo.r-wasm.org/'];
+
+  // Check to see if we have an empty array, if we do set to skip the installation.
+  globalThis.qwebrSetupRPackages = !(qwebrInstallRPackagesList.indexOf("") !== -1);
+  globalThis.qwebrAutoloadRPackages = true;
+
+  // Display a startup message?
+  globalThis.qwebrShowStartupMessage = false;
+  globalThis.qwebrShowHeaderMessage = false;
+
+  // Describe the webR settings that should be used
+  globalThis.qwebrCustomizedWebROptions = {
+    "baseURL": "https://webr.r-wasm.org/v0.2.2/",
+    "serviceWorkerUrl": "",
+    "homedir": "/home/web_user", 
+    "channelType": "ChannelType.Automatic"
+  };
+
+  // Store cell data
+  globalThis.qwebrCellDetails = [{"code":"set.seed(123)\nx <- rnorm(100, mean = 500, sd = 10)\n\nc(summary(x), sd = sd(x))","options":{"classes":"","fig-height":5,"results":"markup","message":"true","out-height":"","autorun":"false","comment":"","warning":"true","context":"interactive","output":"true","fig-cap":"","fig-width":7,"dpi":72,"label":"unnamed-chunk-1","out-width":"700px"},"id":1},{"code":"chickwts |>\n  ggplot(aes(x = weight,\n             y = feed)) +\n  geom_jitter(width = 0, height = 0.1)","options":{"classes":"","fig-height":"3","results":"markup","message":"true","out-height":"","autorun":"false","comment":"","warning":"true","context":"interactive","output":"true","fig-cap":"","fig-width":7,"dpi":72,"label":"unnamed-chunk-2","out-width":"700px"},"id":2}];
+
+  </script>
+  <script type="module">
+  // Declare startupMessageQWebR globally
+  globalThis.qwebrStartupMessage = document.createElement("p");
+
+
+  // Function to set the button text
+  globalThis.qwebrSetInteractiveButtonState = function(buttonText, enableCodeButton = true) {
+    document.querySelectorAll(".qwebr-button-run").forEach((btn) => {
+      btn.innerHTML = buttonText;
+      btn.disabled = !enableCodeButton;
+    });
+  }
+
+  // Function to update the status message in non-interactive cells
+  globalThis.qwebrUpdateStatusMessage = function(message) {
+    document.querySelectorAll(".qwebr-status-text.qwebr-cell-needs-evaluation").forEach((elem) => {
+      elem.innerText = message;
+    });
+  }
+
+  // Function to update the status message
+  globalThis.qwebrUpdateStatusHeader = function(message) {
+    qwebrStartupMessage.innerHTML = `
+      <i class="fa-solid fa-spinner fa-spin qwebr-icon-status-spinner"></i>
+      <span>${message}</span>`;
+  }
+
+  // Function that attaches the document status message and diagnostics
+  function displayStartupMessage(showStartupMessage, showHeaderMessage) {
+    if (!showStartupMessage) {
+      return;
+    }
+
+    // Get references to header elements
+    const headerHTML = document.getElementById("title-block-header");
+    const headerRevealJS = document.getElementById("title-slide");
+
+    // Create the outermost div element for metadata
+    const quartoTitleMeta = document.createElement("div");
+    quartoTitleMeta.classList.add("quarto-title-meta");
+
+    // Create the first inner div element
+    const firstInnerDiv = document.createElement("div");
+    firstInnerDiv.setAttribute("id", "qwebr-status-message-area");
+
+    // Create the second inner div element for "WebR Status" heading and contents
+    const secondInnerDiv = document.createElement("div");
+    secondInnerDiv.setAttribute("id", "qwebr-status-message-title");
+    secondInnerDiv.classList.add("quarto-title-meta-heading");
+    secondInnerDiv.innerText = "WebR Status";
+
+    // Create another inner div for contents
+    const secondInnerDivContents = document.createElement("div");
+    secondInnerDivContents.setAttribute("id", "qwebr-status-message-body");
+    secondInnerDivContents.classList.add("quarto-title-meta-contents");
+
+    // Describe the WebR state
+    qwebrStartupMessage.innerText = "🟡 Loading...";
+    qwebrStartupMessage.setAttribute("id", "qwebr-status-message-text");
+    // Add `aria-live` to auto-announce the startup status to screen readers
+    qwebrStartupMessage.setAttribute("aria-live", "assertive");
+
+    // Append the startup message to the contents
+    secondInnerDivContents.appendChild(qwebrStartupMessage);
+
+    // Add a status indicator for COOP and COEP Headers if needed
+    if (showHeaderMessage) {
+      const crossOriginMessage = document.createElement("p");
+      crossOriginMessage.innerText = `${crossOriginIsolated ? '🟢' : '🟡'} COOP & COEP Headers`;
+      crossOriginMessage.setAttribute("id", "qwebr-coop-coep-header");
+      secondInnerDivContents.appendChild(crossOriginMessage);
+    }
+
+    // Combine the inner divs and contents
+    firstInnerDiv.appendChild(secondInnerDiv);
+    firstInnerDiv.appendChild(secondInnerDivContents);
+    quartoTitleMeta.appendChild(firstInnerDiv);
+
+    // Determine where to insert the quartoTitleMeta element
+    if (headerHTML || headerRevealJS) {
+      // Append to the existing "title-block-header" element or "title-slide" div
+      (headerHTML || headerRevealJS).appendChild(quartoTitleMeta);
+    } else {
+      // If neither headerHTML nor headerRevealJS is found, insert after "webr-monaco-editor-init" script
+      const monacoScript = document.getElementById("qwebr-monaco-editor-init");
+      const header = document.createElement("header");
+      header.setAttribute("id", "title-block-header");
+      header.appendChild(quartoTitleMeta);
+      monacoScript.after(header);
+    }
+  }
+
+  displayStartupMessage(qwebrShowStartupMessage, qwebrShowHeaderMessage);
+  </script>
+  <script type="module">
+  // Supported Evaluation Types for Context
+  globalThis.EvalTypes = Object.freeze({
+    Interactive: 'interactive',
+    Setup: 'setup',
+    Output: 'output',
+  });
+
+  // Function that dispatches the creation request
+  globalThis.qwebrCreateHTMLElement = function (
+    cellData
+  ) {
+
+    // Extract key components
+    const evalType = cellData.options.context;
+    const qwebrCounter = cellData.id;
+
+    // We make an assumption that insertion points are defined by the Lua filter as:
+    // qwebr-insertion-location-{qwebrCounter} 
+    const elementLocator = document.getElementById(`qwebr-insertion-location-${qwebrCounter}`);
+
+    // Figure out the routine to use to insert the element.
+    let qwebrElement;
+    switch ( evalType ) {
+      case EvalTypes.Interactive:
+        qwebrElement = qwebrCreateInteractiveElement(qwebrCounter, cellData.options);
+        break;
+      case EvalTypes.Output: 
+        qwebrElement = qwebrCreateNonInteractiveOutputElement(qwebrCounter, cellData.options);
+        break;
+      case EvalTypes.Setup: 
+        qwebrElement = qwebrCreateNonInteractiveSetupElement(qwebrCounter, cellData.options);
+        break;
+      default: 
+        qwebrElement = document.createElement('div');
+        qwebrElement.textContent = 'Error creating `quarto-webr` element';
+    }
+
+    // Insert the dynamically generated object at the document location.
+    elementLocator.appendChild(qwebrElement);
+  };
+
+  // Function that setups the interactive element creation
+  globalThis.qwebrCreateInteractiveElement = function (qwebrCounter, qwebrOptions) {
+
+    // Create main div element
+    var mainDiv = document.createElement('div');
+    mainDiv.id = 'qwebr-interactive-area-' + qwebrCounter;
+    mainDiv.className = `qwebr-interactive-area`;
+    if (qwebrOptions.classes) {
+      mainDiv.className += " " + qwebrOptions.classes
+    }
+
+    // Add a unique cell identifier that users can customize
+    if (qwebrOptions.label) {
+      mainDiv.setAttribute('data-id', qwebrOptions.label);
+    }
+
+    // Create toolbar div
+    var toolbarDiv = document.createElement('div');
+    toolbarDiv.className = 'qwebr-editor-toolbar';
+    toolbarDiv.id = 'qwebr-editor-toolbar-' + qwebrCounter;
+
+    // Create a div to hold the left buttons
+    var leftButtonsDiv = document.createElement('div');
+    leftButtonsDiv.className = 'qwebr-editor-toolbar-left-buttons';
+
+    // Create a div to hold the right buttons
+    var rightButtonsDiv = document.createElement('div');
+    rightButtonsDiv.className = 'qwebr-editor-toolbar-right-buttons';
+
+    // Create Run Code button
+    var runCodeButton = document.createElement('button');
+    runCodeButton.className = 'btn btn-default qwebr-button qwebr-button-run';
+    runCodeButton.disabled = true;
+    runCodeButton.type = 'button';
+    runCodeButton.id = 'qwebr-button-run-' + qwebrCounter;
+    runCodeButton.textContent = '🟡 Loading webR...';
+    runCodeButton.title = `Run code (Shift + Enter)`;
+
+    // Append buttons to the leftButtonsDiv
+    leftButtonsDiv.appendChild(runCodeButton);
+
+    // Create Reset button
+    var resetButton = document.createElement('button');
+    resetButton.className = 'btn btn-light btn-xs qwebr-button qwebr-button-reset';
+    resetButton.type = 'button';
+    resetButton.id = 'qwebr-button-reset-' + qwebrCounter;
+    resetButton.title = 'Start over';
+    resetButton.innerHTML = '<i class="fa-solid fa-arrows-rotate"></i>';
+
+    // Create Copy button
+    var copyButton = document.createElement('button');
+    copyButton.className = 'btn btn-light btn-xs qwebr-button qwebr-button-copy';
+    copyButton.type = 'button';
+    copyButton.id = 'qwebr-button-copy-' + qwebrCounter;
+    copyButton.title = 'Copy code';
+    copyButton.innerHTML = '<i class="fa-regular fa-copy"></i>';
+
+    // Append buttons to the rightButtonsDiv
+    rightButtonsDiv.appendChild(resetButton);
+    rightButtonsDiv.appendChild(copyButton);
+
+    // Create console area div
+    var consoleAreaDiv = document.createElement('div');
+    consoleAreaDiv.id = 'qwebr-console-area-' + qwebrCounter;
+    consoleAreaDiv.className = 'qwebr-console-area';
+
+    // Create editor div
+    var editorDiv = document.createElement('div');
+    editorDiv.id = 'qwebr-editor-' + qwebrCounter;
+    editorDiv.className = 'qwebr-editor';
+
+    // Create output code area div
+    var outputCodeAreaDiv = document.createElement('div');
+    outputCodeAreaDiv.id = 'qwebr-output-code-area-' + qwebrCounter;
+    outputCodeAreaDiv.className = 'qwebr-output-code-area';
+    outputCodeAreaDiv.setAttribute('aria-live', 'assertive');
+
+    // Create pre element inside output code area
+    var preElement = document.createElement('pre');
+    preElement.style.visibility = 'hidden';
+    outputCodeAreaDiv.appendChild(preElement);
+
+    // Create output graph area div
+    var outputGraphAreaDiv = document.createElement('div');
+    outputGraphAreaDiv.id = 'qwebr-output-graph-area-' + qwebrCounter;
+    outputGraphAreaDiv.className = 'qwebr-output-graph-area';
+
+    // Append buttons to the toolbar
+    toolbarDiv.appendChild(leftButtonsDiv);
+    toolbarDiv.appendChild(rightButtonsDiv);
+
+    // Append all elements to the main div
+    mainDiv.appendChild(toolbarDiv);
+    consoleAreaDiv.appendChild(editorDiv);
+    consoleAreaDiv.appendChild(outputCodeAreaDiv);
+    mainDiv.appendChild(consoleAreaDiv);
+    mainDiv.appendChild(outputGraphAreaDiv);
+
+    return mainDiv;
+  }
+
+  // Function that adds output structure for non-interactive output
+  globalThis.qwebrCreateNonInteractiveOutputElement = function(qwebrCounter, qwebrOptions) {
+    // Create main div element
+    var mainDiv = document.createElement('div');
+    mainDiv.id = 'qwebr-noninteractive-area-' + qwebrCounter;
+    mainDiv.className = `qwebr-noninteractive-area`;
+    if (qwebrOptions.classes) {
+      mainDiv.className += " " + qwebrOptions.classes
+    }
+    
+    // Add a unique cell identifier that users can customize
+    if (qwebrOptions.label) {
+      mainDiv.setAttribute('data-id', qwebrOptions.label);
+    }
+    
+    // Create a status container div
+    var statusContainer = createLoadingContainer(qwebrCounter);
+
+    // Create output code area div
+    var outputCodeAreaDiv = document.createElement('div');
+    outputCodeAreaDiv.id = 'qwebr-output-code-area-' + qwebrCounter;
+    outputCodeAreaDiv.className = 'qwebr-output-code-area';
+    outputCodeAreaDiv.setAttribute('aria-live', 'assertive');
+
+    // Create pre element inside output code area
+    var preElement = document.createElement('pre');
+    preElement.style.visibility = 'hidden';
+    outputCodeAreaDiv.appendChild(preElement);
+
+    // Create output graph area div
+    var outputGraphAreaDiv = document.createElement('div');
+    outputGraphAreaDiv.id = 'qwebr-output-graph-area-' + qwebrCounter;
+    outputGraphAreaDiv.className = 'qwebr-output-graph-area';
+
+    // Append all elements to the main div
+    mainDiv.appendChild(statusContainer);
+    mainDiv.appendChild(outputCodeAreaDiv);
+    mainDiv.appendChild(outputGraphAreaDiv);
+
+    return mainDiv;
+  };
+
+  // Function that adds a stub in the page to indicate a setup cell was used.
+  globalThis.qwebrCreateNonInteractiveSetupElement = function(qwebrCounter, qwebrOptions) {
+    // Create main div element
+    var mainDiv = document.createElement('div');
+    mainDiv.id = `qwebr-noninteractive-setup-area-${qwebrCounter}`;
+    mainDiv.className = `qwebr-noninteractive-setup-area`;
+    if (qwebrOptions.classes) {
+      mainDiv.className += " " + qwebrOptions.classes
+    }
+
+
+    // Add a unique cell identifier that users can customize
+    if (qwebrOptions.label) {
+      mainDiv.setAttribute('data-id', qwebrOptions.label);
+    }
+
+    // Create a status container div
+    var statusContainer = createLoadingContainer(qwebrCounter);
+
+    // Append status onto the main div
+    mainDiv.appendChild(statusContainer);
+
+    return mainDiv;
+  }
+
+
+  // Function to create loading container with specified ID
+  globalThis.createLoadingContainer = function(qwebrCounter) {
+
+    // Create a status container
+    const container = document.createElement('div');
+    container.id = `qwebr-non-interactive-loading-container-${qwebrCounter}`;
+    container.className = 'qwebr-non-interactive-loading-container qwebr-cell-needs-evaluation';
+
+    // Create an R project logo to indicate its a code space
+    const rProjectIcon = document.createElement('i');
+    rProjectIcon.className = 'fa-brands fa-r-project fa-3x qwebr-r-project-logo';
+
+    // Setup a loading icon from font awesome
+    const spinnerIcon = document.createElement('i');
+    spinnerIcon.className = 'fa-solid fa-spinner fa-spin fa-1x qwebr-icon-status-spinner';
+
+    // Add a section for status text
+    const statusText = document.createElement('p');
+    statusText.id = `qwebr-status-text-${qwebrCounter}`;
+    statusText.className = `qwebr-status-text qwebr-cell-needs-evaluation`;
+    statusText.innerText = 'Loading webR...';
+
+    // Incorporate an inner container
+    const innerContainer = document.createElement('div');
+
+    // Append elements to the inner container
+    innerContainer.appendChild(spinnerIcon);
+    innerContainer.appendChild(statusText);
+
+    // Append elements to the main container
+    container.appendChild(rProjectIcon);
+    container.appendChild(innerContainer);
+
+    return container;
+  }
+  </script>
+  <script type="module">
+  // Function to install a single package
+  async function qwebrInstallRPackage(packageName) {
+    await mainWebR.evalRVoid(`webr::install('${packageName}');`);
+  }
+
+  // Function to load a single package
+  async function qwebrLoadRPackage(packageName) {
+    await mainWebR.evalRVoid(`require('${packageName}', quietly = TRUE)`);
+  }
+
+  // Generic function to process R packages
+  async function qwebrProcessRPackagesWithStatus(packages, processType, displayStatusMessageUpdate = true) {
+    // Switch between contexts
+    const messagePrefix = processType === 'install' ? 'Installing' : 'Loading';
+
+    // Modify button state
+    qwebrSetInteractiveButtonState(`🟡 ${messagePrefix} package ...`, false);
+
+    // Iterate over packages
+    for (let i = 0; i < packages.length; i++) {
+      const activePackage = packages[i];
+      const formattedMessage = `${messagePrefix} package ${i + 1} out of ${packages.length}: ${activePackage}`;
+
+      // Display the update in header
+      if (displayStatusMessageUpdate) {
+        qwebrUpdateStatusHeader(formattedMessage);
+      }
+
+      // Display the update in non-active areas
+      qwebrUpdateStatusMessage(formattedMessage);
+
+      // Run package installation
+      if (processType === 'install') {
+        await qwebrInstallRPackage(activePackage);
+      } else {
+        await qwebrLoadRPackage(activePackage);
+      }
+    }
+
+    // Clean slate
+    if (processType === 'load') {
+      await mainWebR.flush();
+    }
+  }
+
+  // Start a timer
+  const initializeWebRTimerStart = performance.now();
+
+  // Encase with a dynamic import statement
+  globalThis.qwebrInstance = import(qwebrCustomizedWebROptions.baseURL + "webr.mjs").then(
+    async ({ WebR, ChannelType }) => {
+      // Populate WebR options with defaults or new values based on `webr` meta
+      globalThis.mainWebR = new WebR(qwebrCustomizedWebROptions);
+
+      // Initialization WebR
+      await mainWebR.init();
+
+      // Setup a shelter
+      globalThis.mainWebRCodeShelter = await new mainWebR.Shelter();
+
+      // Setup a pager to allow processing help documentation 
+      await mainWebR.evalRVoid('webr::pager_install()'); 
+
+      // Override the existing install.packages() to use webr::install()
+      await mainWebR.evalRVoid('webr::shim_install()'); 
+
+      // Specify the repositories to pull from
+      // Note: webR does not use the `repos` option, but instead uses `webr_pkg_repos`
+      // inside of `install()`. However, other R functions still pull from `repos`.
+      await mainWebR.evalRVoid(`
+        options(
+          webr_pkg_repos = c(${qwebrPackageRepoURLS.map(repoURL => `'${repoURL}'`).join(',')}),
+          repos = c(${qwebrPackageRepoURLS.map(repoURL => `'${repoURL}'`).join(',')})
+        )
+      `);
+
+      // Check to see if any packages need to be installed
+      if (qwebrSetupRPackages) {
+        // Obtain only a unique list of packages
+        const uniqueRPackageList = Array.from(new Set(qwebrInstallRPackagesList));
+
+        // Install R packages one at a time (either silently or with a status update)
+        await qwebrProcessRPackagesWithStatus(uniqueRPackageList, 'install', qwebrShowStartupMessage);
+
+        if (qwebrAutoloadRPackages) {
+          // Load R packages one at a time (either silently or with a status update)
+          await qwebrProcessRPackagesWithStatus(uniqueRPackageList, 'load', qwebrShowStartupMessage);
+        }
+      }
+    }
+  );
+
+  // Stop timer
+  const initializeWebRTimerEnd = performance.now();
+
+  </script>
+  <script type="module">
+  // Function to verify a given JavaScript Object is empty
+  globalThis.qwebrIsObjectEmpty = function (arr) {
+      return Object.keys(arr).length === 0;
+  }
+
+  // Global version of the Escape HTML function that converts HTML 
+  // characters to their HTML entities.
+  globalThis.qwebrEscapeHTMLCharacters = function(unsafe) {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    };
+
+  // Passthrough results
+  globalThis.qwebrIdentity = function(x) {
+      return x;
+  };
+
+  // Append a comment
+  globalThis.qwebrPrefixComment = function(x, comment) {
+      return `${comment}${x}`;
+  };
+
+  // Function to parse the pager results
+  globalThis.qwebrParseTypePager = async function (msg) { 
+
+      // Split out the event data
+      const { path, title, deleteFile } = msg.data; 
+
+      // Process the pager data by reading the information from disk
+      const paged_data = await mainWebR.FS.readFile(path).then((data) => {
+          // Obtain the file content
+          let content = new TextDecoder().decode(data);
+
+          // Remove excessive backspace characters until none remain
+          while(content.match(/.[\b]/)){
+          content = content.replace(/.[\b]/g, '');
+          }
+
+          // Returned cleaned data
+          return content;
+      });
+
+      // Unlink file if needed
+      if (deleteFile) { 
+          await mainWebR.FS.unlink(path); 
+      } 
+
+      // Return extracted data with spaces
+      return paged_data;
+  } 
+
+  // Function to run the code using webR and parse the output
+  globalThis.qwebrComputeEngine = async function(
+      codeToRun, 
+      elements, 
+      options) {
+
+      // Call into the R compute engine that persists within the document scope.
+      // To be prepared for all scenarios, the following happens: 
+      // 1. We setup a canvas device to write to by making a namespace call into the {webr} package
+      // 2. We use values inside of the options array to set the figure size.
+      // 3. We capture the output stream information (STDOUT and STERR)
+      // 4. While parsing the results, we disable image creation.
+
+      // Create a canvas variable for graphics
+      let canvas = undefined;
+
+      // Create a pager variable for help/file contents
+      let pager = [];
+
+      // Handle how output is processed
+      let showMarkup = options.results === "markup" && options.output !== "asis";
+      let processOutput;
+
+      if (showMarkup) {
+          processOutput = qwebrEscapeHTMLCharacters;
+      } else {
+          processOutput = qwebrIdentity;
+      }
+
+      // ---- 
+      // Convert from Inches to Pixels by using DPI (dots per inch)
+      // for bitmap devices (dpi * inches = pixels)
+      let fig_width = options["fig-width"] * options["dpi"]
+      let fig_height = options["fig-height"] * options["dpi"]
+
+      // Initialize webR
+      await mainWebR.init();
+
+      // Setup a webR canvas by making a namespace call into the {webr} package
+      await mainWebR.evalRVoid(`webr::canvas(width=${fig_width}, height=${fig_height})`);
+
+      const result = await mainWebRCodeShelter.captureR(codeToRun, {
+          withAutoprint: true,
+          captureStreams: true,
+          captureConditions: false//,
+          // env: webR.objs.emptyEnv, // maintain a global environment for webR v0.2.0
+      });
+
+      // -----
+
+      // Start attempting to parse the result data
+      processResultOutput:try {
+
+          // Stop creating images
+          await mainWebR.evalRVoid("dev.off()");
+          
+          // Avoid running through output processing
+          if (options.results === "hide" || options.output === "false") { 
+              break processResultOutput; 
+          }
+
+          // Merge output streams of STDOUT and STDErr (messages and errors are combined.)
+          // Require both `warning` and `message` to be true to display `STDErr`. 
+          const out = result.output
+          .filter(
+              evt => evt.type === "stdout" || 
+              ( evt.type === "stderr" && (options.warning === "true" && options.message === "true")) 
+          )
+          .map((evt, index) => {
+              const className = `qwebr-output-code-${evt.type}`;
+              const outputResult = qwebrPrefixComment(processOutput(evt.data), options.comment);
+              return `<code id="${className}-editor-${elements.id}-result-${index + 1}" class="${className}">${outputResult}</code>`;
+          })
+          .join("\n");
+
+
+          // Clean the state
+          // We're now able to process both graphics and pager events.
+          // As a result, we cannot maintain a true 1-to-1 output order 
+          // without individually feeding each line
+          const msgs = await mainWebR.flush();
+
+          // Output each image event stored
+          msgs.forEach((msg) => {
+          // Determine if old canvas can be used or a new canvas is required.
+          if (msg.type === 'canvas'){
+              // Add image to the current canvas
+              if (msg.data.event === 'canvasImage') {
+                  canvas.getContext('2d').drawImage(msg.data.image, 0, 0);
+              } else if (msg.data.event === 'canvasNewPage') {
+
+                  // Generate a new canvas element
+                  canvas = document.createElement("canvas");
+                  canvas.setAttribute("width", 2 * fig_width);
+                  canvas.setAttribute("height", 2 * fig_height);
+                  canvas.style.width = options["out-width"] ? options["out-width"] : `${fig_width}px`;
+                  if (options["out-height"]) {
+                      canvas.style.height = options["out-height"];
+                  }
+                  canvas.style.display = "block";
+                  canvas.style.margin = "auto";
+              }
+          } 
+          });
+
+          // Use `map` to process the filtered "pager" events asynchronously
+          const pager = await Promise.all(
+              msgs.filter(msg => msg.type === 'pager').map(
+                  async (msg) => {
+                      return await qwebrParseTypePager(msg);
+                  }
+              )
+          );
+
+          // Nullify the output area of content
+          elements.outputCodeDiv.innerHTML = "";
+          elements.outputGraphDiv.innerHTML = "";
+
+          // Design an output object for messages
+          const pre = document.createElement("pre");
+          if (/\S/.test(out)) {
+              // Display results as HTML elements to retain output styling
+              const div = document.createElement("div");
+              div.innerHTML = out;
+              pre.appendChild(div);
+          } else {
+              // If nothing is present, hide the element.
+              pre.style.visibility = "hidden";
+          }
+
+          elements.outputCodeDiv.appendChild(pre);
+
+          // Place the graphics on the canvas
+          if (canvas) {
+              // Create figure element
+              const figureElement = document.createElement('figure');
+
+              // Append canvas to figure
+              figureElement.appendChild(canvas);
+
+              if (options['fig-cap']) {
+                  // Create figcaption element
+                  const figcaptionElement = document.createElement('figcaption');
+                  figcaptionElement.innerText = options['fig-cap'];
+                  // Append figcaption to figure
+                  figureElement.appendChild(figcaptionElement);    
+              }
+
+              elements.outputGraphDiv.appendChild(figureElement);
+          }
+
+          // Display the pager data
+          if (pager) {
+          // Use the `pre` element to preserve whitespace.
+          pager.forEach((paged_data, index) => {
+              let pre_pager = document.createElement("pre");
+              pre_pager.innerText = paged_data;
+              pre_pager.classList.add("qwebr-output-code-pager");
+              pre_pager.setAttribute("id", `qwebr-output-code-pager-editor-${elements.id}-result-${index + 1}`);
+              elements.outputCodeDiv.appendChild(pre_pager);
+          });
+          }
+      } finally {
+          // Clean up the remaining code
+          mainWebRCodeShelter.purge();
+      }
+  }
+
+  // Function to execute the code (accepts code as an argument)
+  globalThis.qwebrExecuteCode = async function (
+      codeToRun,
+      id,
+      options = {}) {
+
+      // If options are not passed, we fall back on the bare minimum to handle the computation
+      if (qwebrIsObjectEmpty(options)) {
+          options = { 
+              "context": "interactive", 
+              "fig-width": 7, "fig-height": 5, 
+              "out-width": "700px", "out-height": "", 
+              "dpi": 72,
+              "results": "markup", 
+              "warning": "true", "message": "true",
+          };
+      }
+
+      // Next, we access the compute areas values
+      const elements = {
+          runButton: document.getElementById(`qwebr-button-run-${id}`),
+          outputCodeDiv: document.getElementById(`qwebr-output-code-area-${id}`),
+          outputGraphDiv: document.getElementById(`qwebr-output-graph-area-${id}`),
+          id: id,
+      }
+
+      // Disallowing execution of other code cells
+      document.querySelectorAll(".qwebr-button-run").forEach((btn) => {
+          btn.disabled = true;
+      });
+
+      if (options.context == EvalTypes.Interactive) {
+          // Emphasize the active code cell
+          elements.runButton.innerHTML = '<i class="fa-solid fa-spinner fa-spin qwebr-icon-status-spinner"></i> <span>Run Code</span>';
+      }
+
+      // Evaluate the code and parse the output into the document
+      await qwebrComputeEngine(codeToRun, elements, options);
+
+      // Switch to allowing execution of code
+      document.querySelectorAll(".qwebr-button-run").forEach((btn) => {
+          btn.disabled = false;
+      });
+
+      if (options.context == EvalTypes.Interactive) {
+          // Revert to the initial code cell state
+          elements.runButton.innerHTML = '<i class="fa-solid fa-play qwebr-icon-run-code"></i> <span>Run Code</span>';
+      }
+  }
+
+  </script>
+</head>
+<body class="quarto-light">
+<script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs/loader.js"></script>
+<script type="module" id="qwebr-monaco-editor-init">
+
+  // Configure the Monaco Editor's loader
+  require.config({
+    paths: {
+      'vs': 'https://cdn.jsdelivr.net/npm/monaco-editor@0.45.0/min/vs'
+    }
+  });
+</script>
+<script type="module">
+// Global dictionary to store Monaco Editor instances
+globalThis.qwebrEditorInstances = {};
+
+// Function that builds and registers a Monaco Editor instance    
+globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
+
+  const initialCode = cellData.code;
+  const qwebrCounter = cellData.id;
+  const qwebrOptions = cellData.options;
+
+  // Retrieve the previously created document elements
+  let runButton = document.getElementById(`qwebr-button-run-${qwebrCounter}`);
+  let resetButton = document.getElementById(`qwebr-button-reset-${qwebrCounter}`);
+  let copyButton = document.getElementById(`qwebr-button-copy-${qwebrCounter}`);
+  let editorDiv = document.getElementById(`qwebr-editor-${qwebrCounter}`);
+  
+  // Load the Monaco Editor and create an instance
+  let editor;
+  require(['vs/editor/editor.main'], function () {
+    editor = monaco.editor.create(editorDiv, {
+      value: initialCode,
+      language: 'r',
+      theme: 'vs-light',
+      automaticLayout: true,           // Works wonderfully with RevealJS
+      scrollBeyondLastLine: false,
+      minimap: {
+        enabled: false
+      },
+      fontSize: '17.5pt',              // Bootstrap is 1 rem
+      renderLineHighlight: "none",     // Disable current line highlighting
+      hideCursorInOverviewRuler: true  // Remove cursor indictor in right hand side scroll bar
+    });
+
+    // Store the official counter ID to be used in keyboard shortcuts
+    editor.__qwebrCounter = qwebrCounter;
+
+    // Store the official div container ID
+    editor.__qwebrEditorId = `qwebr-editor-${qwebrCounter}`;
+
+    // Store the initial code value and options
+    editor.__qwebrinitialCode = initialCode;
+    editor.__qwebrOptions = qwebrOptions;
+
+    // Set at the model level the preferred end of line (EOL) character to LF.
+    // This prevent `\r\n` from being given to the webR engine if the user is on Windows.
+    // See details in: https://github.com/coatless/quarto-webr/issues/94
+    // Associated error text: 
+    // Error: <text>:1:7 unexpected input
+
+    // Retrieve the underlying model
+    const model = editor.getModel();
+    // Set EOL for the model
+    model.setEOL(monaco.editor.EndOfLineSequence.LF);
+
+    // Dynamically modify the height of the editor window if new lines are added.
+    let ignoreEvent = false;
+    const updateHeight = () => {
+      const contentHeight = editor.getContentHeight();
+      // We're avoiding a width change
+      //editorDiv.style.width = `${width}px`;
+      editorDiv.style.height = `${contentHeight}px`;
+      try {
+        ignoreEvent = true;
+
+        // The key to resizing is this call
+        editor.layout();
+      } finally {
+        ignoreEvent = false;
+      }
+    };
+
+    // Helper function to check if selected text is empty
+    function isEmptyCodeText(selectedCodeText) {
+      return (selectedCodeText === null || selectedCodeText === undefined || selectedCodeText === "");
+    }
+
+    // Registry of keyboard shortcuts that should be re-added to each editor window
+    // when focus changes.
+    const addWebRKeyboardShortCutCommands = () => {
+      // Add a keydown event listener for Shift+Enter to run all code in cell
+      editor.addCommand(monaco.KeyMod.Shift | monaco.KeyCode.Enter, () => {
+
+        // Retrieve all text inside the editor
+        qwebrExecuteCode(editor.getValue(), editor.__qwebrCounter, editor.__qwebrOptions);
+      });
+
+      // Add a keydown event listener for CMD/Ctrl+Enter to run selected code
+      editor.addCommand(monaco.KeyMod.CtrlCmd | monaco.KeyCode.Enter, () => {
+
+        // Get the selected text from the editor
+        const selectedText = editor.getModel().getValueInRange(editor.getSelection());
+        // Check if no code is selected
+        if (isEmptyCodeText(selectedText)) {
+          // Obtain the current cursor position
+          let currentPosition = editor.getPosition();
+          // Retrieve the current line content
+          let currentLine = editor.getModel().getLineContent(currentPosition.lineNumber);
+
+          // Propose a new position to move the cursor to
+          let newPosition = new monaco.Position(currentPosition.lineNumber + 1, 1);
+
+          // Check if the new position is beyond the last line of the editor
+          if (newPosition.lineNumber > editor.getModel().getLineCount()) {
+            // Add a new line at the end of the editor
+            editor.executeEdits("addNewLine", [{
+            range: new monaco.Range(newPosition.lineNumber, 1, newPosition.lineNumber, 1),
+            text: "\n", 
+            forceMoveMarkers: true,
+            }]);
+          }
+          
+          // Run the entire line of code.
+          qwebrExecuteCode(currentLine, editor.__qwebrCounter, editor.__qwebrOptions);
+
+          // Move cursor to new position
+          editor.setPosition(newPosition);
+        } else {
+          // Code to run when Ctrl+Enter is pressed with selected code
+          qwebrExecuteCode(selectedText, editor.__qwebrCounter, editor.__qwebrOptions);
+        }
+      });
+    }
+
+    // Register an on focus event handler for when a code cell is selected to update
+    // what keyboard shortcut commands should work.
+    // This is a workaround to fix a regression that happened with multiple
+    // editor windows since Monaco 0.32.0 
+    // https://github.com/microsoft/monaco-editor/issues/2947
+    editor.onDidFocusEditorText(addWebRKeyboardShortCutCommands);
+
+    // Register an on change event for when new code is added to the editor window
+    editor.onDidContentSizeChange(updateHeight);
+
+    // Manually re-update height to account for the content we inserted into the call
+    updateHeight();
+
+    // Store the editor instance in the global dictionary
+    qwebrEditorInstances[editor.__qwebrCounter] = editor;
+
+  });
+
+  // Add a click event listener to the run button
+  runButton.onclick = function () {
+    qwebrExecuteCode(editor.getValue(), editor.__qwebrCounter, editor.__qwebrOptions);
+  };
+
+  // Add a click event listener to the reset button
+  copyButton.onclick = function () {
+    // Retrieve current code data
+    const data = editor.getValue();
+    
+    // Write code data onto the clipboard.
+    navigator.clipboard.writeText(data || "");
+  };
+  
+  // Add a click event listener to the copy button
+  resetButton.onclick = function () {
+    editor.setValue(editor.__qwebrinitialCode);
+  };
+  
+}
+</script>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" center-title-slide="false" data-background-image="resources_main/watercolour_sys02_img41_stormy-seas.jpg" class="quarto-title-block center">
+  <h1 class="title">Creating slides <br>with Quarto</h1>
+  <p class="subtitle">Workshop for VVSOR, 2024 feb 21</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Martine Jansen 
+</div>
+</div>
+</div>
+
+</section>
+<section>
+<section id="intro" class="title-slide slide level1 center">
+<h1>Intro</h1>
+
+</section>
+<section id="preparations" class="slide level2">
+<h2>Preparations</h2>
+<ul>
+<li class="fragment">Have RStudio version v2022.07.1 or more recent</li>
+</ul>
+</section>
+<section id="content-of-workshop" class="slide level2">
+<h2>Content of workshop</h2>
+<p>It is about:</p>
+<ul>
+<li class="fragment">Presentation types, but mostly Reveal JS</li>
+<li class="fragment">Get the content in place</li>
+<li class="fragment">Make it look better</li>
+<li class="fragment">Fun things to add in pres</li>
+</ul>
+<div class="fragment">
+<p>But not so much about:</p>
+<ul>
+<li class="fragment">Design choices</li>
+<li class="fragment">What works best in pres</li>
+</ul>
+</div>
+<div class="fragment">
+<p><img data-src="resources_main/tenor.gif" class="absolute" style="bottom: 0px; right: 0px; "></p>
+</div>
+</section>
+<section id="start-basic-content-12" class="slide level2">
+<h2>Start &amp; Basic Content 1/2</h2>
+<p>How to start a new presentation:<br>
+<code>File &gt; New File &gt; Quarto Presentation ... &gt;</code> <br></p>
+<div class="fragment">
+<p>Have a look at Habits.qmd, and render it</p>
+</div>
+<div class="fragment">
+<p><img data-src="resources_main/vintage-1751222_640.png" class="absolute" style="top: 100px; left: 950px; width: 100px; height: 150px; "></p>
+</div>
+<div class="fragment">
+<pre><code>---                 
+title: "Habits"     # yaml
+format: beamer      # yaml presentation type
+---                 
+
+# In the morning    
+
+## Getting up       
+
+- Turn off alarm  
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee</code></pre>
+</div>
+</section>
+<section id="start-basic-content-22" class="slide level2">
+<h2>Start &amp; Basic Content 2/2</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><code># Title section</code></p>
+</div><div class="column fragment" style="width:60%;">
+<p>starts new section with title “Title section”</p>
+</div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><code>## Slide title</code></p>
+</div><div class="column fragment" style="width:60%;">
+<p>starts new slide with title “Slide title”</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><code>-  item</code></p>
+</div><div class="column fragment" style="width:60%;">
+<p>“item” is in a bullet list</p>
+</div>
+</div>
+</div>
+</section>
+<section id="presentation-types" class="slide level2">
+<h2>Presentation types</h2>
+<p>See how output changes, by<br>
+changing the format by (un)commenting code in Habits.qmd</p>
+<ul>
+<li class="fragment">Beamer</li>
+<li class="fragment">PowerPoint</li>
+<li class="fragment">Reveal JS</li>
+</ul>
+<div class="fragment">
+<p><img data-src="resources_main/vintage-1751222_640.png" class="absolute" style="top: 200px; left: 950px; width: 100px; height: 150px; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="resources_main/formats.png"></p>
+</div>
+</section></section>
+<section>
+<section id="get-the-content-in-place" class="title-slide slide level1 center">
+<h1>Get the content in place</h1>
+<div class="fragment">
+<p><img data-src="resources_main/giphyyes.gif" class="absolute" style="top: 100px; right: 0px; "></p>
+</div>
+</section>
+<section id="lists" class="slide level2">
+<h2>Lists</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>You type:</p>
+</div><div class="column fragment" style="width:60%;">
+<p>It renders as:</p>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:40%;">
+<pre><code>-  item
+-  another item
+    - subitem</code></pre>
+</div><div class="column fragment" style="width:60%;">
+<ul>
+<li class="fragment">item</li>
+<li class="fragment">another item
+<ul>
+<li class="fragment">subitem</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><code>1. an item</code><br>
+<code>1. another item</code><br>
+<code>some text</code><br>
+<code>1. and an item</code></p>
+</div><div class="column fragment" style="width:50%;">
+<ol type="1">
+<li class="fragment">an item</li>
+<li class="fragment">another item<br>
+some text<br>
+</li>
+<li class="fragment">and an item</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="use-r-in-a-slide" class="slide level2">
+<h2>Use R in a slide</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>You type:</p>
+</div><div class="column fragment" data-fragment-index="2" style="width:40%;">
+<p>It renders as:</p>
+</div>
+</div>
+<div class="columns">
+<div class="column fragment" data-fragment-index="1" style="width:60%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb3-2"><a href=""></a><span class="in">anscombe |&gt;</span></span>
+<span id="cb3-3"><a href=""></a><span class="in">  ggplot(aes(x = x2,</span></span>
+<span id="cb3-4"><a href=""></a><span class="in">             y = y2)) +</span></span>
+<span id="cb3-5"><a href=""></a><span class="in">  geom_point(size = 4) +</span></span>
+<span id="cb3-6"><a href=""></a><span class="in">  theme_minimal(</span></span>
+<span id="cb3-7"><a href=""></a><span class="in">    base_size = 20) </span></span>
+<span id="cb3-8"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div><div class="column fragment" data-fragment-index="3" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="workshop_quarto_slides_files/figure-revealjs/unnamed-chunk-2-1.png" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p><br> <br></p>
+<div class="columns">
+<div class="column fragment" data-fragment-index="4" style="width:60%;">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>`r mean(mtcars$wt)`</code></pre>
+</div>
+</div>
+</div><div class="column fragment" data-fragment-index="5" style="width:40%;">
+<p>3.21725</p>
+</div>
+</div>
+</section>
+<section id="add-an-url" class="slide level2">
+<h2>Add an URL</h2>
+<ul>
+<li class="fragment">Just type <code>&lt;text between&gt;</code>: <a href="https://osf.io/" class="uri">https://osf.io/</a></li>
+<li class="fragment">Or have <a href="https://osf.io/">some text link to it</a></li>
+</ul>
+<div class="fragment">
+<p><code>[some text link to it](https://osf.io/)</code></p>
+<ul>
+<li class="fragment">or combine the two: <a href="https://osf.io/" class="uri">https://osf.io/</a></li>
+</ul>
+</div>
+<div class="fragment">
+<p><code>[https://osf.io/](https://osf.io/)</code></p>
+</div>
+<div class="fragment">
+<ul>
+<li class="fragment">and add a tooltip: <a href="https://osf.io/" class="uri">https://osf.io/</a></li>
+</ul>
+</div>
+<div class="fragment">
+<p><code>[https://osf.io/](https://osf.io/ "link to https://osf.io/")</code></p>
+</div>
+</section>
+<section id="print-handouts" class="slide level2">
+<h2>Print handouts</h2>
+<ul>
+<li class="fragment"><p>Via presentation menu left bottom, tools, PDF export mode <a href="https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf" class="uri">https://quarto.org/docs/presentations/revealjs/presenting.html#print-to-pdf</a></p></li>
+<li class="fragment"><p><code>pagedown::chrome_print("yourdocument.html")</code></p></li>
+</ul>
+</section>
+<section id="now-you-round-1" class="slide level2">
+<h2>Now you, Round 1</h2>
+<p>See PalmerPenguins.txt<br>
+Make the pres described in Round 1</p>
+<p><img data-src="resources_main/vintage-1751222_640.png" class="absolute" style="top: 50px; left: 800px; "></p>
+<p><br> <br></p>
+            <div id="TIMER_ROUND1"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    initializeTimer("TIMER_ROUND1", 600);
+                });
+            </script>
+        
+</section></section>
+<section>
+<section id="make-it-look-better" class="title-slide slide level1 center">
+<h1>Make it look better</h1>
+
+</section>
+<section id="columns-12" class="slide level2">
+<h2>Columns 1/2</h2>
+<p>Divide the width of the page into two columns:</p>
+<pre><code>:::: columns
+
+::: {.column width="30%"}
+This column is of 30% width, a smaller column
+:::
+
+::: {.column width="70%"}
+This column is of 70% width, not very small 
+:::
+
+::::</code></pre>
+</section>
+<section id="columns-22" class="slide level2">
+<h2>Columns 2/2</h2>
+<p>Divide the width of the page into three columns:</p>
+<div class="columns">
+<div class="column" style="width:30%;">
+<p>This column is of 30% width, a smaller column</p>
+</div><div class="column" style="width:70%;">
+<p>This column is of 70% width, not very small</p>
+</div>
+</div>
+<div class="fragment">
+<p>See <a href="https://quarto.org/docs/presentations/revealjs/#multiple-columns" class="uri">https://quarto.org/docs/presentations/revealjs/#multiple-columns</a></p>
+</div>
+</section>
+<section id="call-outs-13" class="slide level2">
+<h2>Call-outs 1/3</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>There are five types of callouts: <code>note</code>, <code>warning</code>, <code>important</code>, <code>tip</code>, and <code>caution</code>.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<pre><code>::: {.callout-note}
+There are five types of callouts:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::</code></pre>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>This is an important warning with no specific content</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<pre><code>::: {.callout-warning}
+## This is an important warning with no specific content
+:::</code></pre>
+</div>
+</section>
+<section id="call-outs-23" class="slide level2">
+<h2>Call-outs 2/3</h2>
+<pre><code>::: {.callout-tip}
+## Pay attention
+Using callouts is an effective way to highlight content.
+:::</code></pre>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pay attention</strong></p>
+</div>
+<div class="callout-content">
+<p>Using callouts is an effective way to highlight content.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<pre><code>::: {.callout-tip appearance="simple"}
+## Pay attention
+Using callouts is an effective way to highlight content.
+:::</code></pre>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pay attention</strong></p>
+</div>
+<div class="callout-content">
+<p>Using callouts is an effective way to highlight content.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="call-outs-33" class="slide level2">
+<h2>Call-outs 3/3</h2>
+<pre><code>::: {.callout-tip icon=false}
+## Pay attention
+Using callouts is an effective way to highlight content.
+:::</code></pre>
+<div class="fragment">
+<div class="callout callout-tip no-icon callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Pay attention</strong></p>
+</div>
+<div class="callout-content">
+<p>Using callouts is an effective way to highlight content.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<pre><code>::: {.callout-tip appearance="minimal"}
+## Pay attention
+Using callouts is an effective way to highlight content.
+:::</code></pre>
+</div>
+<div class="fragment">
+<div class="callout callout-tip no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Pay attention</strong></p>
+</div>
+<div class="callout-content">
+<p>Using callouts is an effective way to highlight content.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="callouts-read-more" class="slide level2">
+<h2>Callouts read more</h2>
+<ul>
+<li class="fragment">works in all three formats</li>
+<li class="fragment">looks best in revealjs</li>
+<li class="fragment">read more at <a href="https://quarto.org/docs/authoring/callouts.html" class="uri">https://quarto.org/docs/authoring/callouts.html</a></li>
+</ul>
+</section></section>
+<section>
+<section id="from-now-on-format-revealjs" class="title-slide slide level1 center">
+<h1>From now on, format revealjs</h1>
+
+</section>
+<section id="revealjs" class="slide level2">
+<h2>Revealjs</h2>
+<ul>
+<li class="fragment"><code>reveal.js</code> is an open source HTML presentation framework</li>
+<li class="fragment">Project started and maintained by Hakim El Hattab, with help of a lot of contributors</li>
+<li class="fragment"><a href="https://revealjs.com/" class="uri">https://revealjs.com/</a></li>
+</ul>
+</section>
+<section id="slide-numbers-footer" class="slide level2">
+<h2>Slide numbers &amp; Footer</h2>
+<p>Add to YAML:</p>
+<p><code>slide-number: true</code></p>
+<div class="fragment">
+<p><code>footer: This is my useful footer text</code></p>
+</div>
+<div class="fragment">
+<p><br></p>
+<p>For slide specific footer:</p>
+<pre><code>::: {.footer}
+Have yourself a slide specific footer
+:::</code></pre>
+<div class="footer">
+<p>See? This slide has a slide specific footer</p>
+</div>
+</div>
+</section>
+<section id="logo" class="slide level2">
+<h2>Logo</h2>
+<ul>
+<li class="fragment">Add to YAML: <code>logo: path_to_your_logo.png</code></li>
+<li class="fragment">According to <a href="https://quarto.org/docs/presentations/revealjs/#footer-logo" class="uri">https://quarto.org/docs/presentations/revealjs/#footer-logo</a> it should be</li>
+</ul>
+<div class="fragment">
+<pre><code>format:
+  revealjs: 
+    logo: path_to_your_logo.png</code></pre>
+</div>
+<div class="fragment">
+<p>but the simple one works as well</p>
+<ul>
+<li class="fragment">default right bottom and a bit small,</li>
+<li class="fragment">can add scss to relocate and scale</li>
+<li class="fragment">try to avoid clashes with slide numbers</li>
+</ul>
+</div>
+</section>
+<section id="incremental-display-of-lists" class="slide level2">
+<h2>Incremental display of lists</h2>
+<ul>
+<li class="fragment">To have all lists incremental, add to YAML:<br>
+<code>incremental: true</code> <br></li>
+</ul>
+<div class="fragment">
+<div>
+<ul>
+<li>Have a list nonincremental</li>
+<li>by wrapping it in an .nonincremental div</li>
+</ul>
+</div>
+</div>
+<div class="fragment">
+<pre><code>::: {.nonincremental}
+-  Have a list nonincremental
+-  by wrapping it in an .nonincremental div
+:::</code></pre>
+</div>
+</section>
+<section id="have-a-pause" class="slide level2">
+<h2>Have a pause</h2>
+<p>Adding of</p>
+<pre><code>
+. . . 
+</code></pre>
+<p>will add a pause</p>
+<div class="fragment">
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure>
+<p><img data-src="workshop_quarto_slides_files/figure-revealjs/unnamed-chunk-4-1.png" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="fragments-fading-in-and-out" class="slide level2">
+<h2>Fragments, fading in and out</h2>
+<div class="fragment fade-out">
+<p>You can have a fragment fade out</p>
+</div>
+<div class="fragment">
+<pre><code>::: {.fragment .fade-out}
+You can have a fragment fade out
+:::</code></pre>
+</div>
+<div class="fragment">
+<div class="fragment">
+<p>You can have a fragment fade in</p>
+</div>
+</div>
+<div class="fragment">
+<pre><code>::: {.fragment}
+You can have a fragment fade in
+:::</code></pre>
+</div>
+</section>
+<section id="fragments-more-fading" class="slide level2">
+<h2>Fragments, more fading</h2>
+<div class="fragment fade-in-then-out">
+<p>A fragment can fade in, and then fade out</p>
+</div>
+<div class="fragment">
+<pre><code>::: {.fragment .fade-in-then-out}
+A fragment can fade in, and then fade out
+:::</code></pre>
+</div>
+<div class="fragment">
+<div class="fragment fade-up">
+<p>A fragment can also slide up</p>
+</div>
+</div>
+<div class="fragment">
+<pre><code>::: {.fragment .fade-up}
+A fragment can also slide up
+:::</code></pre>
+</div>
+</section>
+<section id="fragments-highlighting-nesting" class="slide level2">
+<h2>Fragments, highlighting &amp; nesting</h2>
+<p>Something already there</p>
+<div class="fragment highlight-red">
+<p>can be highlighted</p>
+</div>
+<div class="fragment">
+<pre><code>::: {.fragment .highlight-red}
+can be highlighted
+:::</code></pre>
+</div>
+<div class="fragment">
+<p>Fragments can be nested, for multiple effects on same text</p>
+<div class="fragment fade-down">
+<div class="fragment highlight-blue">
+<div class="fragment semi-fade-out">
+<p>Fade down &gt; Turn blue &gt; Semi fade out</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<pre><code>::: {.fragment .fade-down}
+::: {.fragment .highlight-blue}
+::: {.fragment .semi-fade-out}
+Fade down &gt; Turn blue &gt; Semi fade out
+:::
+:::
+:::</code></pre>
+</div>
+</section>
+<section id="fragments-appearing-in-order" class="slide level2">
+<h2>Fragments appearing in order</h2>
+<div class="fragment" data-fragment-index="3">
+<p>Then this appears third</p>
+</div>
+<div class="fragment" data-fragment-index="1">
+<p>This fragment appears first</p>
+</div>
+<div class="fragment" data-fragment-index="2">
+<p>This fragment is second</p>
+</div>
+<div class="fragment">
+<pre><code>::: {.fragment fragment-index=3}
+Then this appears third
+:::
+
+::: {.fragment fragment-index=1}
+This fragment appears first
+:::
+
+::: {.fragment fragment-index=2}
+This fragment is second
+:::</code></pre>
+</div>
+</section>
+<section id="fragments-inline-use" class="slide level2">
+<h2>Fragments, inline use</h2>
+<p>You can also have <span class="fragment">fragments of inline text</span> appear.</p>
+<div class="fragment">
+<pre><code>You can also have [fragments of inline text]{.fragment} appear.</code></pre>
+</div>
+<div class="fragment">
+<p>Or <span class="fragment highlight-red">highlight some text</span>, but not all</p>
+</div>
+<div class="fragment">
+<pre><code>Or [highlight some text]{.fragment .highlight-red}, but not all</code></pre>
+</div>
+<div class="fragment">
+<p>Nesting <span class="fragment highlight-blue"><span class="fragment">is also possible, sort of</span></span></p>
+</div>
+<div class="fragment">
+<pre><code>Nesting [[is also possible, sort of]{.fragment}]{.fragment .highlight-blue} </code></pre>
+</div>
+<div class="fragment">
+<p><br><br>
+See <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#fragments" class="uri">https://quarto.org/docs/presentations/revealjs/advanced.html#fragments</a></p>
+</div>
+</section>
+<section id="fragments-in-columns" class="slide level2">
+<h2>Fragments in columns</h2>
+<p><code>. . .</code> does not work within columns, <code>.fragment</code> does</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p>This first</p>
+<div class="fragment">
+<p>That second</p>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<p>This comes third</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<pre><code>:::: columns
+::: {.column width="50%"}
+This first
+
+::: {.fragment}
+That second
+:::
+
+:::
+::: {.column .fragment width="50%"}
+This comes third
+:::
+::::</code></pre>
+</div>
+</section>
+<section id="adding-images-to-a-slide" class="slide level2">
+<h2>Adding images to a slide</h2>
+<ul>
+<li class="fragment">In a slide with <code>![](path_to_image)</code></li>
+</ul>
+<div class="fragment">
+<p><img data-src="resources_main/hedgehog.png" height="200"></p>
+<ul>
+<li class="fragment"><code>![](resources_main/hedgehog.png){height="200"}</code></li>
+<li class="fragment">Illustrations by Alison Hill and Allison Horst, for RStudio</li>
+<li class="fragment">You can also use the visual editor, and then insert</li>
+</ul>
+</div>
+</section>
+<section id="an-image-on-a-specific-place" class="slide level2">
+<h2>An image on a specific place</h2>
+<p><img data-src="resources_main/hedgehog0.png" class="absolute" style="top: 100px; left: 0px; width: 350px; "></p>
+<div class="fragment">
+<p><img data-src="resources_main/hedgehog3.png" class="absolute" style="top: 200px; left: 50px; width: 450px; "></p>
+</div>
+<div class="fragment">
+<p><img data-src="resources_main/hedgehog4.png" class="absolute" style="bottom: 0px; right: 50px; width: 300px; "></p>
+</div>
+</section>
+<section id="an-image-on-a-specific-place-1" class="slide level2">
+<h2>An image on a specific place</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="resources_main/hedgehog0.png" class="absolute" style="top: 100px; left: 0px; width: 350px; "> <img data-src="resources_main/hedgehog3.png" class="absolute" style="top: 200px; left: 50px; width: 450px; "> <img data-src="resources_main/hedgehog4.png" class="absolute" style="bottom: 0px; right: 50px; width: 300px; "></p>
+</div><div class="column" style="width:50%;">
+<pre><code>![](resources_main/hedgehog0.png){.absolute top=100 left=0 width="350"}
+![](resources_main/hedgehog3.png){.absolute top=200 left=50 width="450"}
+![](resources_main/hedgehog4.png){.absolute bottom=0 right=50 width="300"}</code></pre>
+</div>
+</div>
+</section>
+<section id="slide-background-color" class="slide level2" data-background-color="lightgreen">
+<h2>Slide background, color</h2>
+<ul>
+<li class="fragment">This slide has a background in “lightgreen”</li>
+<li class="fragment"><code>## Slide background, color {background-color="lightgreen"}</code></li>
+<li class="fragment">All CSS colors are possible, also hex codes</li>
+<li class="fragment">For colors, see <a href="https://www.w3schools.com/cssref/css_colors.php" class="uri">https://www.w3schools.com/cssref/css_colors.php</a></li>
+</ul>
+</section>
+<section id="slide-background-image" class="slide level2" data-background-image="resources_main/hedgehog0.png" data-background-size="100px" data-background-repeat="repeat" data-background-opacity="0.2">
+<h2>Slide background, image</h2>
+<ul>
+<li class="fragment"><code>background-image="..."</code></li>
+<li class="fragment"><code>background-size="100px"</code></li>
+<li class="fragment"><code>background-repeat="repeat"</code></li>
+<li class="fragment"><code>background-opacity=0.5</code></li>
+<li class="fragment">resulting in this slide header: <code>## Slide background, image {background-image="resources_main/hedgehog0.png" background-size="100px" background-repeat="repeat" background-opacity=0.2}</code></li>
+</ul>
+</section>
+<section id="slide-background-gif" class="slide level2" data-background-image="resources_main/giphyyes.gif">
+<h2>Slide background, gif</h2>
+<p>A bit distracting, isn’t it?</p>
+<div class="fragment">
+<p><code>## Slide background, gif {background-image="resources_main/giphyyes.gif"}</code></p>
+</div>
+</section>
+<section id="section" class="slide level2" data-background-image="resources_main/hedgehog0.png">
+<h2></h2>
+<div class="fragment">
+<p><strong>No slide title is needed</strong></p>
+</div>
+<div class="fragment">
+<p><span class="absolute" style="rotate: 10deg;top: 10%; left: 60%; "><strong><code>## {background-image="resources_main/hedgehog0.png"}</code></strong></span></p>
+</div>
+</section>
+<section id="background-picture-in-title-slide" class="slide level2">
+<h2>Background picture in title slide</h2>
+<p>Add to yaml:</p>
+<pre><code>title-slide-attributes: 
+  data-background-image: "path_to_picture"</code></pre>
+<div class="fragment">
+<p>If you want the picture to be less opaque:</p>
+<pre><code>title-slide-attributes: 
+  data-background-image: "path_to_picture"
+  data-background-opacity: "0.1"</code></pre>
+</div>
+<div class="fragment">
+<p>All Slide background options are available,<br>
+but prepend with <code>data-</code></p>
+</div>
+</section>
+<section id="now-you-round-2" class="slide level2">
+<h2>Now you, Round 2</h2>
+<p>See PalmerPenguins.txt<br>
+Make the pres described in Round 2</p>
+<p><img data-src="resources_main/vintage-1751222_640.png" class="absolute" style="top: 50px; left: 800px; "></p>
+<p><br> <br></p>
+            <div id="TIMER_ROUND2"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    initializeTimer("TIMER_ROUND2", 600);
+                });
+            </script>
+        
+</section></section>
+<section>
+<section id="and-even-better" class="title-slide slide level1 center">
+<h1>And even better</h1>
+
+</section>
+<section id="stretch" class="slide level2">
+<h2>Stretch</h2>
+<div class="r-fit-text">
+<p>Attention</p>
+</div>
+<div class="fragment">
+<pre><code>::: {.r-fit-text}
+Attention
+:::</code></pre>
+</div>
+</section>
+<section id="slide-size" class="slide level2">
+<h2>Slide size</h2>
+<ul>
+<li class="fragment">Default size slide is 1050 by 700</li>
+<li class="fragment">Reveal will automatically scale presentations uniformly</li>
+<li class="fragment">Adjust in the YAML:
+<ul>
+<li class="fragment">width, (default 1050)</li>
+<li class="fragment">height, (default to 700)</li>
+<li class="fragment">margin, part of display size empty around content (default 0.1)</li>
+</ul></li>
+</ul>
+</section>
+<section id="slide-transition" class="slide level2" data-transition="slide-in concave-out" data-transition-speed="slow">
+<h2>Slide transition</h2>
+<ul>
+<li class="fragment">Animation of slide transition is possible</li>
+<li class="fragment">Use it wisely</li>
+<li class="fragment">Read more: <a href="https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions" class="uri">https://quarto.org/docs/presentations/revealjs/advanced.html#slide-transitions</a></li>
+</ul>
+<div class="fragment">
+<pre><code>
+## Slide transition {transition="slide-in slide-out" transition-speed="slow"}
+</code></pre>
+</div>
+</section>
+<section id="emoji" class="slide level2">
+<h2>Emoji</h2>
+<ul>
+<li class="fragment">You can have emoji <span class="emoji" data-emoji="sunglasses">😎</span></li>
+<li class="fragment">Just add to the YAML:</li>
+</ul>
+<div class="fragment">
+<pre><code>from: markdown+emoji</code></pre>
+<ul>
+<li class="fragment"><p>Add a <span class="emoji" data-emoji="purple_heart">💜</span> emoji with <code>:purple_heart:</code></p></li>
+<li class="fragment"><p>See <a href="https://gist.github.com/rxaviers/7360908" class="uri">https://gist.github.com/rxaviers/7360908</a> for a list of emoji codes</p></li>
+<li class="fragment"><p><span class="emoji" data-emoji="smiley">😃</span></p></li>
+</ul>
+</div>
+</section>
+<section id="theming" class="slide level2">
+<h2>Theming</h2>
+<ul>
+<li class="fragment">11 built-in themes for revealjs presentations</li>
+<li class="fragment">The default theme is default (<span class="emoji" data-emoji="smirk">😏</span>)</li>
+<li class="fragment">You can make your own</li>
+</ul>
+</section>
+<section id="playing-with-themes" class="slide level2">
+<h2>Playing with themes</h2>
+<p><img data-src="resources_main/vintage-1751222_640.png" class="absolute" style="top: 0px; left: 900px; width: 100px; height: 150px; "></p>
+<ul>
+<li class="fragment">In YAML, change<br>
+</li>
+</ul>
+<div class="fragment">
+<pre><code>format: revealjs</code></pre>
+</div>
+<div class="fragment">
+<p>into (mind the gap)</p>
+</div>
+<div class="fragment">
+<pre><code>format:
+  revealjs: 
+    theme: default</code></pre>
+<ul>
+<li class="fragment">Try some of the themes at<br>
+<a href="https://quarto.org/docs/presentations/revealjs/themes.html" class="uri">https://quarto.org/docs/presentations/revealjs/themes.html</a></li>
+</ul>
+</div>
+</section>
+<section id="what-makes-a-theme-technically" class="slide level2">
+<h2>What makes a theme, technically</h2>
+<ul>
+<li class="fragment">In revealjs, themes are a <code>scss</code> file</li>
+<li class="fragment"><code>scss</code>:
+<ul>
+<li class="fragment">Sassy Cascading Style Sheet</li>
+<li class="fragment">extends <code>CSS</code> with new features: variables, functions, …</li>
+<li class="fragment">gets compiled to <code>CSS</code> before use in browser, so it can describe how HTML elements should appear on the web page</li>
+</ul></li>
+</ul>
+</section>
+<section id="a-look-at-dark.scss" class="slide level2">
+<h2>A look at <code>dark.scss</code></h2>
+<pre><code>/*-- scss:defaults --*/
+
+$body-bg: #191919 !default;
+$body-color: #fff !default;
+$link-color: #42affa !default;
+$input-panel-bg: rgba(233, 236, 239, 0.2) !default;</code></pre>
+<ul>
+<li class="fragment"><code>!default</code> assigns value only if variable was undefined</li>
+<li class="fragment"><code>!important</code> overrides previously declared styles</li>
+<li class="fragment">Variables start with $</li>
+<li class="fragment">A list of all the scss variables, see <a href="https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables" class="uri">https://quarto.org/docs/presentations/revealjs/themes.html#sass-variables</a></li>
+<li class="fragment">More on scss(sass), see <a href="https://sass-lang.com/guide/#variables" class="uri">https://sass-lang.com/guide/#variables</a></li>
+</ul>
+</section>
+<section id="have-your-own-theme-scss" class="slide level2">
+<h2>Have your own theme &amp; SCSS</h2>
+<ul>
+<li class="fragment">To add your own theme, add to YAML:</li>
+</ul>
+<div class="fragment">
+<pre><code>format:
+  revealjs: 
+    theme: [default, myown.scss]
+</code></pre>
+<ul>
+<li class="fragment">And have of course a <code>myown.scss</code> file <span class="emoji" data-emoji="smiley">😃</span></li>
+<li class="fragment"><a href="https://quarto.org/docs/presentations/revealjs/themes.html#creating-themes" class="uri">https://quarto.org/docs/presentations/revealjs/themes.html#creating-themes</a></li>
+</ul>
+</div>
+</section>
+<section id="now-you-round-3" class="slide level2">
+<h2>Now you, Round 3</h2>
+<p>See PalmerPenguins.txt<br>
+Make the pres described in Round 2</p>
+<p><img data-src="resources_main/vintage-1751222_640.png" class="absolute" style="top: 50px; left: 800px; "></p>
+<p><br> <br></p>
+            <div id="TIMER_ROUND3"></div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    initializeTimer("TIMER_ROUND3", 600);
+                });
+            </script>
+        
+</section>
+<section id="animation-on-your-slides" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Animation on your slides</h2>
+<div style="margin-top: 100px;">
+<p>Animating content</p>
+</div>
+</section>
+<section id="animation-on-your-slides-1" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Animation on your slides</h2>
+<div style="margin-top: 200px; font-size: 3em; color: #880000;">
+<p>Animating content</p>
+</div>
+</section>
+<section id="animation-on-your-slides-2" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Animation on your slides</h2>
+<div style="margin-top: 300px; font-size: 3.2em; color:  #003333;">
+<p>Animating content</p>
+</div>
+</section>
+<section id="the-code" class="slide level2 smaller">
+<h2>The code</h2>
+<pre><code>## Animation on your slides {auto-animate=true}
+
+::: {style="margin-top: 100px;"}
+Animating content
+:::
+
+## Animation on your slides {auto-animate=true}
+
+::: {style="margin-top: 200px; font-size: 3em; color: #880000;"}
+Animating content
+:::
+
+## Animation on your slides {auto-animate=true}
+
+::: {style="margin-top: 300px; font-size: 3.2em; color:  #003333;"}
+Animating content
+:::
+</code></pre>
+</section>
+<section id="another-animation" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Another animation</h2>
+<div class="r-hstack">
+<div data-id="box1" data-auto-animate-delay="0" style="background: #880000; width: 200px; height: 150px; margin: 10px;">
+
+</div>
+<div data-id="box2" data-auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;">
+
+</div>
+<div data-id="box3" data-auto-animate-delay="0.2" style="background: #880000; width: 200px; height: 150px; margin: 10px;">
+
+</div>
+</div>
+</section>
+<section id="another-animation-1" class="slide level2" data-auto-animate="true" data-auto-animate-easing="ease-in-out">
+<h2 data-id="quarto-animate-title">Another animation</h2>
+<div class="r-stack">
+<div data-id="box1" style="background: #880000; width: 350px; height: 350px; border-radius: 200px;">
+
+</div>
+<div data-id="box2" style="background: #3fb618; width: 250px; height: 250px; border-radius: 200px;">
+
+</div>
+<div data-id="box3" style="background: #880000; width: 150px; height: 150px; border-radius: 200px;">
+
+</div>
+</div>
+</section>
+<section id="part-of-the-code" class="slide level2">
+<h2>Part of the code</h2>
+<pre><code>## Another animation {auto-animate="true" auto-animate-easing="ease-in-out"}
+
+
+
+::: r-hstack
+::: {data-id="box1" auto-animate-delay="0" style="background: #880000; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box2" auto-animate-delay="0.1" style="background: #3fb618; width: 200px; height: 150px; margin: 10px;"}
+:::
+
+::: {data-id="box3" auto-animate-delay="0.2" style="background: #880000; width: 200px; height: 150px; margin: 10px;"}
+:::
+:::
+</code></pre>
+</section>
+<section id="auto-animate" class="slide level2">
+<h2>Auto-animate</h2>
+<ul>
+<li class="fragment">Automatically animate matching elements across slides with Auto-Animate</li>
+<li class="fragment"><a href="https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate" class="uri">https://quarto.org/docs/presentations/revealjs/advanced.html#auto-animate</a></li>
+</ul>
+</section></section>
+<section>
+<section id="interactivity" class="title-slide slide level1 center">
+<h1>Interactivity</h1>
+
+</section>
+<section id="writing-on-slides" class="slide level2">
+<h2>Writing on slides</h2>
+<ul>
+<li class="fragment">Sometimes you wish to <span class="fragment highlight-red">stress</span> something while speaking</li>
+<li class="fragment">If you know that upfront, you can program it</li>
+<li class="fragment">As in the first line</li>
+<li class="fragment">What can you do if you feel the need to write on your slides?</li>
+<li class="fragment">Type <code>c</code>, or click the pen at the bottom</li>
+<li class="fragment">Typing <code>b</code> or the blackboard at the bottom</li>
+<li class="fragment">Only works if added to YAML: <code>chalkboard: true</code></li>
+<li class="fragment"><a href="https://quarto.org/docs/presentations/revealjs/presenting.html#chalkboard" class="uri">https://quarto.org/docs/presentations/revealjs/presenting.html#chalkboard</a></li>
+</ul>
+</section>
+<section id="a-map" class="slide level2">
+<h2>A map</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell">
+<div class="cell-output-display">
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-c15f3dbee4d49986b090" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-c15f3dbee4d49986b090">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</div><div class="column fragment" style="width:60%;">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href=""></a><span class="in">```{r}</span></span>
+<span id="cb39-2"><a href=""></a><span class="in">library(leaflet)</span></span>
+<span id="cb39-3"><a href=""></a><span class="in">leaflet() |&gt;</span></span>
+<span id="cb39-4"><a href=""></a><span class="in">  # Add default OpenStreetMap</span></span>
+<span id="cb39-5"><a href=""></a><span class="in">  # map tiles</span></span>
+<span id="cb39-6"><a href=""></a><span class="in">  addTiles() |&gt; </span></span>
+<span id="cb39-7"><a href=""></a><span class="in">  addMarkers(</span></span>
+<span id="cb39-8"><a href=""></a><span class="in">    lng=174.768,</span></span>
+<span id="cb39-9"><a href=""></a><span class="in">    lat=-36.852,</span></span>
+<span id="cb39-10"><a href=""></a><span class="in">    popup="The birthplace of R")</span></span>
+<span id="cb39-11"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p><a href="https://quarto.org/docs/interactive/widgets/htmlwidgets.html" class="uri">https://quarto.org/docs/interactive/widgets/htmlwidgets.html</a></p>
+</div>
+</div>
+</div>
+</section>
+<section id="r-in-your-browser-what" class="slide level2">
+<h2>R in your browser, what?</h2>
+<div id="qwebr-insertion-location-1"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="r-in-your-browser-also-ggplot" class="slide level2">
+<h2>R in your browser, also ggplot</h2>
+<div id="qwebr-insertion-location-2"></div>
+<noscript>Please enable JavaScript to experience the dynamic code cell content on this page.</noscript>
+</section>
+<section id="r-in-your-browser-how" class="slide level2 smaller">
+<h2>R in your browser, how?</h2>
+<ul>
+<li class="fragment">Add to the YAML:</li>
+</ul>
+<div class="fragment">
+<pre><code>webr:
+  packages: ['ggplot2'] # Install R packages on document open
+filter:
+  - webr</code></pre>
+<ul>
+<li class="fragment">Add the webr extension via the terminal:<br>
+<code>quarto add coatless/quarto-webr</code></li>
+<li class="fragment">Use webr-r chunks: <code>webr-r</code></li>
+<li class="fragment">For use in revealjs: have quarto 1.4</li>
+<li class="fragment">Read more on webr at <a href="https://docs.r-wasm.org/webr/latest/" class="uri">https://docs.r-wasm.org/webr/latest/</a><br>
+</li>
+<li class="fragment">Helpful example: <a href="https://github.com/coatless/quarto-webr/blob/cd9a862badc14e5593b3d833861ae70688f35de0/examples/revealjs/index.qmd" class="uri">https://github.com/coatless/quarto-webr/blob/cd9a862badc14e5593b3d833861ae70688f35de0/examples/revealjs/index.qmd</a></li>
+</ul>
+</div>
+</section>
+<section id="extensions" class="slide level2">
+<h2>Extensions</h2>
+<ul>
+<li class="fragment">Extend the behaviour of Quarto</li>
+<li class="fragment">Add to project via <code>Terminal</code>, for instance:<br>
+<code>quarto add coatless/quarto-webr</code><br>
+<code>quarto add produnis/quarto-timer</code><br>
+<code>quarto add quarto-ext/pointer</code></li>
+<li class="fragment"><strong>Quarto extensions may execute code when documents are rendered. Therefore, if you do not trust the author of an extension, do not install or use the extension.</strong></li>
+<li class="fragment"><a href="https://quarto.org/docs/extensions/listing-revealjs.html" class="uri">https://quarto.org/docs/extensions/listing-revealjs.html</a></li>
+<li class="fragment"><a href="https://quarto.org/docs/extensions/managing.html" class="uri">https://quarto.org/docs/extensions/managing.html</a></li>
+</ul>
+</section></section>
+<section>
+<section id="closing-part" class="title-slide slide level1 center">
+<h1>Closing part</h1>
+
+</section>
+<section id="we-did-not-talk-about" class="slide level2">
+<h2>We did not talk about</h2>
+<ul>
+<li class="fragment">Speakernotes</li>
+<li class="fragment">Multiplex</li>
+<li class="fragment">Zooming in on slide: <code>alt-click</code></li>
+<li class="fragment">Overview on slides: <code>o</code></li>
+<li class="fragment"><strong>Shiny in the browser</strong></li>
+<li class="fragment">Some beamer themes do have page numbers, see <a href="https://stackoverflow.com/questions/74300235/frame-number-in-quarto-beamer-presentation" class="uri">https://stackoverflow.com/questions/74300235/frame-number-in-quarto-beamer-presentation</a></li>
+</ul>
+</section>
+<section id="we-also-did-not-talk-about-slide-design" class="slide level2 smaller">
+<h2>We also did not talk about slide design</h2>
+<p>For instance have a look at:</p>
+<ul>
+<li class="fragment">Storytelling with Data - Cole Nussbaumer Knaflic<br>
+4.4/5 <span class="emoji" data-emoji="star">⭐</span> <a href="https://www.goodreads.com/book/show/26535513-storytelling-with-data" class="uri">https://www.goodreads.com/book/show/26535513-storytelling-with-data</a><br>
+<a href="https://www.storytellingwithdata.com/" class="uri">https://www.storytellingwithdata.com/</a></li>
+<li class="fragment">Data Story - Nancy Duarte<br>
+4.0/5 <span class="emoji" data-emoji="star">⭐</span> <a href="https://www.goodreads.com/book/show/50016865-datastory?ref=nav_sb_ss_1_23" class="uri">https://www.goodreads.com/book/show/50016865-datastory?ref=nav_sb_ss_1_23</a><br>
+<a href="https://www.duarte.com/resources/books/datastory/" class="uri">https://www.duarte.com/resources/books/datastory/</a></li>
+<li class="fragment">Beyond bullet points - Cliff Atkinson<br>
+3.9/5 <span class="emoji" data-emoji="star">⭐</span> <a href="https://www.goodreads.com/book/show/39508803-beyond-bullet-points?ref=nav_sb_ss_2_20" class="uri">https://www.goodreads.com/book/show/39508803-beyond-bullet-points?ref=nav_sb_ss_2_20</a></li>
+</ul>
+</section>
+<section id="some-presentations-collections-to-get-inspired" class="slide level2">
+<h2>Some presentations / collections to get inspired</h2>
+<ul>
+<li class="fragment"><a href="https://quarto.org/docs/gallery/#presentations" class="uri">https://quarto.org/docs/gallery/#presentations</a></li>
+<li class="fragment"><a href="https://github.com/mcanouil/awesome-quarto#presentations" class="uri">https://github.com/mcanouil/awesome-quarto#presentations</a></li>
+</ul>
+</section></section>
+<section id="references-13" class="title-slide slide level1 smaller center">
+<h1>References 1/3</h1>
+<ul>
+<li class="fragment">Danielle Navarro: Stormy seas (artwork title slide)<br>
+<a href="https://art.djnavarro.net/gallery/water-colours/" class="uri">https://art.djnavarro.net/gallery/water-colours/</a></li>
+<li class="fragment">Alison Hill and Allison Horst, for RStudio: Hedgehog illustrations<br>
+<a href="https://allisonhorst.com/horst-hill-collaborations" class="uri">https://allisonhorst.com/horst-hill-collaborations</a></li>
+<li class="fragment">Allison Horst: palmerpenguins package<br>
+<a href="https://allisonhorst.github.io/palmerpenguins/" class="uri">https://allisonhorst.github.io/palmerpenguins/</a></li>
+<li class="fragment">Quarto:
+<ul>
+<li class="fragment">Demo revealjs presentation<br>
+<a href="https://quarto.org/docs/presentations/revealjs/" class="uri">https://quarto.org/docs/presentations/revealjs/</a></li>
+<li class="fragment">Reference revealjs presentation <a href="https://quarto.org/docs/reference/formats/presentations/revealjs.html" class="uri">https://quarto.org/docs/reference/formats/presentations/revealjs.html</a></li>
+</ul></li>
+</ul>
+</section>
+
+<section id="references-23" class="title-slide slide level1 smaller center">
+<h1>References 2/3</h1>
+<ul>
+<li class="fragment">Meghan Hall
+<ul>
+<li class="fragment">Making slides in Quarto with reveal.js<br>
+<a href="https://meghan.rbind.io/blog/quarto-slides/" class="uri">https://meghan.rbind.io/blog/quarto-slides/</a></li>
+</ul></li>
+<li class="fragment">Emil Hvitfeldt
+<ul>
+<li class="fragment">Slidecraft<br>
+<a href="https://emilhvitfeldt.com/blog#category=slidecraft%20101" class="uri">https://emilhvitfeldt.com/blog#category=slidecraft%20101</a></li>
+</ul></li>
+<li class="fragment">B. Philipp Kleer
+<ul>
+<li class="fragment">Using Quarto for presentations (alas not there anymore) <a href="https://bpkleer.de/public/quarto/my-1st-quarto.html#/title-slide" class="uri">https://bpkleer.de/public/quarto/my-1st-quarto.html#/title-slide</a></li>
+</ul></li>
+<li class="fragment">Thomas Mock
+<ul>
+<li class="fragment">05 - Presentations - Making Slides with Code<br>
+<a href="https://rstudio-conf-2022.github.io/get-started-quarto/materials/05-presentations.html#/presentations" class="uri">https://rstudio-conf-2022.github.io/get-started-quarto/materials/05-presentations.html#/presentations</a></li>
+</ul></li>
+</ul>
+</section>
+
+<section id="references-33" class="title-slide slide level1 smaller center">
+<h1>References 3/3</h1>
+<ul>
+<li class="fragment">feather by Gordon Johnson<br>
+<a href="https://pixabay.com/nl/vectors/vintage-veerkracht-schacht-1751222/" class="uri">https://pixabay.com/nl/vectors/vintage-veerkracht-schacht-1751222/</a></li>
+<li class="fragment">minions gif<br>
+<a href="https://tenor.com/nl/view/despicable-me-minions-lets-get-started-happy-excited-gif-4767352" class="uri">https://tenor.com/nl/view/despicable-me-minions-lets-get-started-happy-excited-gif-4767352</a></li>
+<li class="fragment">yes gif by Kelley Bren Burke<br>
+<a href="https://giphy.com/stickers/yes-big-colorful-AAhngLcMTzF21zx9C4" class="uri">https://giphy.com/stickers/yes-big-colorful-AAhngLcMTzF21zx9C4</a></li>
+</ul>
+</section>
+
+<section>
+<section id="thanks-to-creators-and-maintainers-of-used-packages-extensions-and-the-r-people" class="title-slide slide level1 center">
+<h1>Thanks to creators and maintainers of used packages &amp; extensions and the R people</h1>
+<ul>
+<li class="fragment">packages: <code>ggplot2</code>, <code>leaflet</code></li>
+<li class="fragment">extensions: <code>webr</code>, <code>pointer</code>, <code>timer</code></li>
+<li class="fragment">R people: R consortium, RStudio</li>
+</ul>
+</section>
+<section id="section-1" class="slide level2" data-background-image="resources_main/watercolour_sys02_img41_stormy-seas.jpg">
+<h2></h2>
+<p><span style="color:#F5EFE8;"><strong>Contact info</strong></span> <br> <br> <br></p>
+<p><span style="color:#F5EFE8;"><strong>Martine Jansen</strong></span></p>
+<p><br></p>
+<p><span style="color:#F5EFE8;"><i class="fa-brands fa-linkedin"></i></span><br>
+<a href="https://www.linkedin.com/in/martine-jansen-4326108/" style="color:#F5EFE8;">https://www.linkedin.com/in/martine-jansen-4326108/</a></p>
+<p><br></p>
+<p><span style="color:#F5EFE8;"><i class="fa-brands fa-mastodon"></i></span><br>
+<a href="https://fosstodon.org/@MartineJansen" style="color:#F5EFE8;">https://fosstodon.org/<span class="citation" data-cites="MartineJansen">@MartineJansen</span></a></p>
+<div class="quarto-auto-generated-content">
+<p><img src="resources_main/mRtine.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Workshop for VVSOR | Creating slides with Quarto | Martine Jansen</p>
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="workshop_quarto_slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="workshop_quarto_slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'pointer': {"key":"q","color":"#32cd32","pointerSize":18,"alwaysVisible":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    <script type="module">
+    // Handle cell initialization initialization
+    qwebrCellDetails.map(
+      (entry) => {
+        // Handle the creation of the element
+        qwebrCreateHTMLElement(entry);
+        // In the event of interactive, initialize the monaco editor
+        if (entry.options.context == EvalTypes.Interactive) {
+          qwebrCreateMonacoEditorInstance(entry);
+        }
+      }
+    );
+
+    // Identify non-interactive cells (in order)
+    const filteredEntries = qwebrCellDetails.filter(entry => {
+      const contextOption = entry.options && entry.options.context;
+      return ['output', 'setup'].includes(contextOption) || (contextOption == "interactive" && entry.options && entry.options.autorun === 'true');
+    });
+
+    // Condition non-interactive cells to only be run after webR finishes its initialization.
+    qwebrInstance.then(
+      async () => {
+        const nHiddenCells = filteredEntries.length;
+        var currentHiddenCell = 0;
+
+
+        // Modify button state
+        qwebrSetInteractiveButtonState(`🟡 Running hidden code cells ...`, false);
+
+        // Begin processing non-interactive sections
+        // Due to the iteration policy, we must use a for() loop.
+        // Otherwise, we would need to switch to using reduce with an empty
+        // starting promise
+        for (const entry of filteredEntries) {
+
+          // Determine cell being examined
+          currentHiddenCell = currentHiddenCell + 1;
+          const formattedMessage = `Evaluating hidden cell ${currentHiddenCell} out of ${nHiddenCells}`;
+
+          // Update the document status header
+          if (qwebrShowStartupMessage) {
+            qwebrUpdateStatusHeader(formattedMessage);
+          }
+
+          // Display the update in non-active areas
+          qwebrUpdateStatusMessage(formattedMessage);
+
+          // Extract details on the active cell
+          const evalType = entry.options.context;
+          const cellCode = entry.code;
+          const qwebrCounter = entry.id;
+
+          if (['output', 'setup'].includes(evalType)) {
+            // Disable further global status updates
+            const activeContainer = document.getElementById(`qwebr-non-interactive-loading-container-${qwebrCounter}`);
+            activeContainer.classList.remove('qwebr-cell-needs-evaluation');
+            activeContainer.classList.add('qwebr-cell-evaluated');
+
+            // Update status on the code cell
+            const activeStatus = document.getElementById(`qwebr-status-text-${qwebrCounter}`);
+            activeStatus.innerText = " Evaluating hidden code cell...";
+            activeStatus.classList.remove('qwebr-cell-needs-evaluation');
+            activeStatus.classList.add('qwebr-cell-evaluated');
+          }
+
+          switch (evalType) {
+            case 'interactive':
+              // TODO: Make this more standardized.
+              // At the moment, we're overriding the interactive status update by pretending its
+              // output-like. 
+              const tempOptions = entry.options;
+              tempOptions["context"] = "output"
+              // Run the code in a non-interactive state that is geared to displaying output
+              await qwebrExecuteCode(`${cellCode}`, qwebrCounter, tempOptions);
+              break;
+            case 'output':
+              // Run the code in a non-interactive state that is geared to displaying output
+              await qwebrExecuteCode(`${cellCode}`, qwebrCounter, entry.options);
+              break;
+            case 'setup':
+              const activeDiv = document.getElementById(`qwebr-noninteractive-setup-area-${qwebrCounter}`);
+              // Run the code in a non-interactive state with all output thrown away
+              await mainWebR.evalRVoid(`${cellCode}`);
+              break;
+            default: 
+              break; 
+          }
+
+          if (['output', 'setup'].includes(evalType)) {
+            // Disable further global status updates
+            const activeContainer = document.getElementById(`qwebr-non-interactive-loading-container-${qwebrCounter}`);
+            // Disable visibility
+            activeContainer.style.visibility = 'hidden';
+            activeContainer.style.display = 'none';
+          }
+        }
+      }
+    ).then(
+      () => {
+        // Release document status as ready
+
+        if (qwebrShowStartupMessage) {
+          qwebrStartupMessage.innerText = "🟢 Ready!"
+        }
+      
+        qwebrSetInteractiveButtonState(
+          `<i class="fa-solid fa-play qwebr-icon-run-code"></i> <span>Run Code</span>`, 
+          true
+        );  
+      }
+    );
+    </script>
+    
+
+</body></html>

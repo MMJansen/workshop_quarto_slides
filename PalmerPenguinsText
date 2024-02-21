@@ -1,0 +1,107 @@
+
+Resources for PalmerPenguins presentation - Workshop by Martine Jansen 2024 feb
+===============================================================================
+===============================================================================
+
+Inspired by Palmer Penguins Package by
+
+Allison Horst 
+alison Hill
+Kristen Gorman
+
+https://allisonhorst.github.io/palmerpenguins/
+
+Some images for this presentation are in the folder resources_penguins
+When used, please cite with “Artwork by @allison_horst”
+
+Make the format of the presentation revealjs.
+
+
+Round 1
+===============================================================================
+
+Content for the slides
+===============================================================================
+
+Introduction
+------------
+
+Text for slide:
+
+-  Penguins are interesting
+-  Data about penguins in the palmerpenguins package
+   (palmer penguins should be link to https://allisonhorst.github.io/palmerpenguins/) 
+-  Package by Horst, Hill and Groman
+-  Contains data sets penguins and penguins_raw (xxxx rows)
+-  xxx downloads today from RStudio CRAN mirror (fill in by visiting https://hadley.shinyapps.io/cran-downloads/ and see a basic shiny app in action)
+
+
+Three types of penguins
+-----------------------
+
+-  Calculate the mean body mass and mean flipper length per species
+-  Place that in a small table
+-  Make a ggplot with flipperlength on x-axis, body mass on y-axis, and differentiate species by color
+
+
+Bill length and Depth
+---------------------
+
+- Plot Bill length against Bill depth. Add regression line
+- Plot Bill length against Bill depth, and color by species. Add regression line per species
+- Make a remark on what you see
+
+
+References
+----------
+
+Add a short text regarding the palmerpenguins package.
+(Next round, we expand this part)
+
+--> Handouts
+
+-  Print your presentation to a pdf, for handouts
+-  Try both both methods, and check for differences
+
+
+Round 2
+===============================================================================
+
+Start with a copy of the round 1 version
+After each addition, render the pres to check
+
+-  Let bullet points show incrementally
+-  Make the slide with the table and a plot in a two column layout, have a pause between the two
+-  To the slide about the bill depth and length, add an explaining image (from the resources)
+-  Add the image of the penguins to the title page, make it a bit transparent
+-  Add page numbers
+-  Add a logo, use palmerpenguins.png
+-  have a footer
+-  Install {grateful}, a helpful package regarding citations
+-  Read https://github.com/Pakillo/grateful
+-  Add citations
+-  Make a pdf print, with both methods, and check for differences
+
+
+Round 3
+===============================================================================
+
+Start with a copy of the round 2 version
+
+-  Change background color of the reference slide
+-  Add a slide after title slide without a title, but with a background image
+-  Place the word "Penguins" in de largest possible font on this slide
+-  Be sure it shows after a pause
+-  Add an image somehwere at the right, also after a pause
+-  Have a different size of the slides, 
+-  See how it affects the slide with the large word
+
+When time permits:  
+
+-  Make a scss file with File > New File > Text File and save it with extension .scss
+-  See how the tab of the file changes
+-  Make some choices for colors
+-  Add this to the presentation
+
+
+

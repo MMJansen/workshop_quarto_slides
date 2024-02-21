@@ -1,0 +1,36 @@
+---                                         
+title: "Habits"         
+author: "Example from https://quarto.org/docs/presentations/"
+format: beamer
+# format: pptx
+# format:
+#   pptx:
+#     reference-doc: habitstemplate.pptx
+# format: revealjs
+
+---
+
+# In the morning
+
+## Getting up
+
+
+- Turn off alarm
+- Get out of bed
+
+## Breakfast
+
+- Eat eggs
+- Drink coffee
+
+# In the evening
+
+## Dinner
+
+- Eat spaghetti
+- Drink wine
+
+## Going to sleep
+
+- Get in bed
+- Count sheep

@@ -1,0 +1,65 @@
+/*-- scss:defaults --*/
+
+$body-bg: #F5EFE8;
+$body-color: #003333;
+$link-color: #880000;
+$presentation-title-slide-text-align: left;
+$code-block-font-size: 0.7em;
+$code-block-bg: #fff;
+$code-block-border-color: $body-color;
+
+
+
+/*-- scss:rules --*/
+
+
+.reveal .slide.level1 {
+  background-color: $body-color !important;
+  body-color: $body-bg
+}
+
+
+#title-slide .subtitle {
+  color: #F5EFE8;
+  
+ 
+}
+
+#title-slide .quarto-title-author-name {
+  color: #F5EFE8;
+ 
+}
+
+#title-slide .quarto-title-affiliation {
+  color: #F5EFE8;
+  
+}
+
+
+
+.reveal .slide-logo {
+  top: 0 !important;
+  height: 100px !important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+.reveal .progress {
+  height: 2%;
+}
+
+
+.slide-number,
+.reveal.has-logo .slide-number {
+  bottom: 10px !important;
+  right: 10px !important;
+  top: unset !important;
+  color: $body-color !important;
+  font-size: 80%;
+}
+
+.reveal .slides h1 {
+   color:  $body-bg !important;
+  
+}
+
