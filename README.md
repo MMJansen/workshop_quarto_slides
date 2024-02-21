@@ -12,8 +12,8 @@ Take a look at:
 To get the workshop experience:  
 
 -  Start by reading either
-        -  `workshop_quarto_slides.pdf`
-        -  `workshop_quarto_slides.html`
-        -  the html is a lot nicer
+    -  `workshop_quarto_slides.pdf`
+    -  `workshop_quarto_slides.html`
+    -  the html is a lot nicer
 -  Do the exercises when prompted
 
