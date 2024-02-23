@@ -565,7 +565,7 @@
   };
 
   // Store cell data
-  globalThis.qwebrCellDetails = [{"code":"set.seed(123)\nx <- rnorm(100, mean = 500, sd = 10)\n\nc(summary(x), sd = sd(x))","options":{"classes":"","fig-height":5,"results":"markup","message":"true","out-height":"","autorun":"false","comment":"","warning":"true","context":"interactive","output":"true","fig-cap":"","fig-width":7,"dpi":72,"label":"unnamed-chunk-1","out-width":"700px"},"id":1},{"code":"chickwts |>\n  ggplot(aes(x = weight,\n             y = feed)) +\n  geom_jitter(width = 0, height = 0.1)","options":{"classes":"","fig-height":"3","results":"markup","message":"true","out-height":"","autorun":"false","comment":"","warning":"true","context":"interactive","output":"true","fig-cap":"","fig-width":7,"dpi":72,"label":"unnamed-chunk-2","out-width":"700px"},"id":2}];
+  globalThis.qwebrCellDetails = [{"code":"set.seed(123)\nx <- rnorm(100, mean = 500, sd = 10)\n\nc(summary(x), sd = sd(x))","options":{"message":"true","warning":"true","classes":"","results":"markup","label":"unnamed-chunk-1","autorun":"false","out-height":"","comment":"","out-width":"700px","context":"interactive","dpi":72,"fig-cap":"","output":"true","fig-width":7,"fig-height":5},"id":1},{"code":"chickwts |>\n  ggplot(aes(x = weight,\n             y = feed)) +\n  geom_jitter(width = 0, height = 0.1)","options":{"message":"true","warning":"true","classes":"","results":"markup","label":"unnamed-chunk-2","autorun":"false","out-height":"","comment":"","out-width":"700px","context":"interactive","dpi":72,"fig-cap":"","output":"true","fig-width":7,"fig-height":"3"},"id":2}];
 
   </script>
   <script type="module">
@@ -2487,8 +2487,8 @@ Animating content
 <div class="column" style="width:40%;">
 <div class="cell">
 <div class="cell-output-display">
-<div class="leaflet html-widget html-fill-item" id="htmlwidget-c15f3dbee4d49986b090" style="width:960px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-c15f3dbee4d49986b090">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-2863559331e867ed2737" style="width:960px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-2863559331e867ed2737">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[-36.852,174.768,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},"The birthplace of R",null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-36.852,-36.852],"lng":[174.768,174.768]}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </div><div class="column fragment" style="width:60%;">
@@ -2549,7 +2549,7 @@ filter:
 <li class="fragment">Add to project via <code>Terminal</code>, for instance:<br>
 <code>quarto add coatless/quarto-webr</code><br>
 <code>quarto add produnis/quarto-timer</code><br>
-<code>quarto add quarto-ext/pointer</code></li>
+<code>quarto add quarto-ext/pointer</code> (click q and see)</li>
 <li class="fragment"><strong>Quarto extensions may execute code when documents are rendered. Therefore, if you do not trust the author of an extension, do not install or use the extension.</strong></li>
 <li class="fragment"><a href="https://quarto.org/docs/extensions/listing-revealjs.html" class="uri">https://quarto.org/docs/extensions/listing-revealjs.html</a></li>
 <li class="fragment"><a href="https://quarto.org/docs/extensions/managing.html" class="uri">https://quarto.org/docs/extensions/managing.html</a></li>
@@ -2707,7 +2707,7 @@ filter:
 'autoAnimateUnmatched': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
 'chalkboard': {"buttons":true},
-'pointer': {"key":"q","color":"#32cd32","pointerSize":18,"alwaysVisible":false},
+'pointer': {"key":"q","color":"#32cd32","pointerSize":30,"alwaysVisible":false},
 'smaller': false,
  
         // Display controls in the bottom right corner

@@ -7,7 +7,7 @@ format:
     # embed-resources: true  # uncomment for making a selfcontained html for sharing
     theme: [default, mijn.scss]
     pointer:
-      pointerSize: 18
+      pointerSize: 30
       color: '#32cd32'
 logo: resources_main/mRtine.png
 incremental: true
@@ -1225,7 +1225,7 @@ filter:
 -  Add to project via `Terminal`, for instance:  
 `quarto add coatless/quarto-webr`  
 `quarto add produnis/quarto-timer`  
-`quarto add quarto-ext/pointer`
+`quarto add quarto-ext/pointer` (click q and see)
 -  **Quarto extensions may execute code when documents are rendered. Therefore, if you do not trust the author of an extension, do not install or use the extension.**
 -  <https://quarto.org/docs/extensions/listing-revealjs.html>
 -  <https://quarto.org/docs/extensions/managing.html>
